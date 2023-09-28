@@ -7,7 +7,8 @@ while ((c <= 10)); do
     elif((c == 8));then
 	echo "good luck"
     else
-	echo "Holberton School";
+	echo "Best School";
     fi
     ((c++))
-done	
+done
+
