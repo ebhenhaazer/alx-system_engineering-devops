@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script that displays all active IPv4 IPs on the machine
+# Bash script that displats all active IPv4 IPs on executing machine
+#Change your home IP
+ifconfig | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1
+#ifconfig lo | grep "inet addr" | cut -d ':' -f 2 | cut -d ' ' -f 1
