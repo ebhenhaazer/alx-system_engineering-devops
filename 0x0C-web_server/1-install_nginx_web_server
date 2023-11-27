@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# bash script to nginx on server
+sudo apt-get -y update && sudo apt-get install -y nginx
+
+#Change index.html to read "Hello World!"
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+sudo service nginx start
