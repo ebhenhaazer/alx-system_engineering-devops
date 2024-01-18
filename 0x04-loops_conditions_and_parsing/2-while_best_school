@@ -6,3 +6,12 @@ do
     echo "Best School"
     x=$(( x + 1 ))
 done
+
+#!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
+
+while ((c < 10))
+do
+	echo "Holberton School"
+	(( c++ ))
+done

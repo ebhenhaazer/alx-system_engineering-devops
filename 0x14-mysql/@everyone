@@ -1,0 +1,42 @@
+3se note:** 
+
+- You have to name this script **install_mysql** for it to work. Otherwise change the second last paragraph (name of the file)
+
+- You have to have the `signature.key` file ( from here: https://intranet.alxswe.com/rltoken/Zzs_TLRYjWWFxjJRArmFcQ) in your current directory before running the script
+
+- that you have to enter a **password** for your mysql server: A good option is to leave it empty for a passwordless login since you will be the only using it.
+
+- Remember to `chmod +x install_mysql` before running the script
+
+ <@841451170316943390> helped me materialise this😂 
+
+```
+#!/bin/bash
+# Author: Blain Muema
+# Github: @octocatblain
+
+# This script will install mysql version 5.7*
+
+# Change permissions for signature.key file
+sudo chmod 644 signature.key
+
+# signature.key is a file from (https://intranet.alxswe.com/rltoken/Zzs_TLRYjWWFxjJRArmFcQ)
+sudo apt-key add signature.key
+sudo sh -c 'echo "deb http://repo.mysql.com/apt/ubuntu bionic mysql-5.7" >> /etc/apt/sources.list.d/mysql.list'
+sudo apt-get update
+
+# Add this key
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B7B3B788A8D3785C
+
+# Check available versions
+sudo apt-cache policy mysql-server
+
+# Install mysql 5.7*
+sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7* -y
+
+#check installed mysql version
+mysql --version
+```
+
+- **If you get an error the first time. Just run the script again. That will resolve any errors:wq
+
