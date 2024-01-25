@@ -1,12 +1,3 @@
-# The limit of requests is changed in Nginx default file
-
-exec { 'increase the uLimit of nginx':
-  command => 'sed -i \'s/15/15000/g\' /etc/default/nginx',
-  path    => ['/bin']
-}
-
-exec { 'restart nginx':
-  command => 'service nginx restart',
-  path    => ['/usr/bin']
-}
-
+# Puppet script
+exec { '/usr/bin/env sed -i s/15/1000/ /etc/default/nginx': }
+-> exec { '/usr/bin/env service nginx restart': }
